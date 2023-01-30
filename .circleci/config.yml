@@ -12,23 +12,19 @@ jobs:
       - image: cimg/node:19.5.0
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
-      - run:
-          name: "print_hello"
-          command: "echo Hey Hello!"
+    steps:      
+      - run: echo Hey! Hello
+          
   print_world:
     docker:
       - image: cimg/node:19.5.0
-    steps:
-      - checkout
-      - run:
-          name: "print_world"
-          command: "echo World!"
+    steps:    
+      - run: echo To the whole world
+          
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-world-workflow:
+  say-hello-to-world:
     jobs:
       - print_hello
       - print_world:
