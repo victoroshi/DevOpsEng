@@ -26,6 +26,7 @@ jobs:
 workflows:
   say-hello-to-world:
     jobs:
+      - say-hello-to-world/run
       - print_hello
       - print_world:
           requires: 
